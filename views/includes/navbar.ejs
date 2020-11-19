@@ -1,0 +1,141 @@
+<div class="navbar-inverse navbar navbar-fixed-top">
+  <div class="container-fluid">
+
+    <div class="navbar-header">
+      <a class="current navbar-brand" href="/">
+        <img alt="BeamMP Logo" class="h-20" src="../img/beammp-logo.png">
+      </a>
+      <button class="action-right-sidebar-toggle navbar-toggle collapsed" data-target="#navdbar" data-toggle="collapse" type="button">
+        <i class="fa fa-fw fa-align-right text-white"></i>
+      </button>
+      <button class="navbar-toggle collapsed" data-target="#navbar" data-toggle="collapse" type="button">
+        <i class="fa fa-fw fa-user text-white"></i>
+      </button>
+      <button class="action-sidebar-open navbar-toggle collapsed" type="button">
+        <i class="fa fa-fw fa-bars text-white"></i>
+      </button>
+    </div>
+
+    <div class="collapse navbar-collapse" id="navbar">
+
+      <!-- START Left Side Navbar -->
+      <ul class="nav navbar-nav navbar-left clearfix yamm">
+
+        <!-- START Switch Sidebar ON/OFF -->
+        <li id="sidebar-switch" class="hidden-xs">
+          <a class="action-toggle-sidebar-slim" data-placement="bottom" data-toggle="tooltip" href="#" title="Slim sidebar on/off">
+            <i class="fa fa-lg fa-bars fa-fw"></i>
+          </a>
+        </li>
+        <!-- END Switch Sidebar ON/OFF -->
+      </ul>
+      <!-- START Left Side Navbar -->
+
+      <!-- START Right Side Navbar -->
+      <ul class="nav navbar-nav navbar-right">
+
+        <li role="separator" class="divider hidden-lg hidden-md hidden-sm"></li>
+        <li class="dropdown-header hidden-lg hidden-md hidden-sm text-gray-lighter text-uppercase">
+          <strong>Your Profile</strong>
+        </li>
+
+        <!-- START Notification -->
+        <li class="dropdown">
+
+          <!-- START Icon Notification with Badge (10)-->
+          <a class="dropdown-toggle" data-toggle="dropdown" href="#" role="button">
+            <i class="fa fa-lg fa-fw fa-bell hidden-xs"></i>
+            <span class="hidden-sm hidden-md hidden-lg">
+              Notifications <span class="badge badge-primary m-l-1"></span>
+            </span>
+            <span class="label label-primary label-pill label-with-icon hidden-xs"></span>
+            <span class="fa fa-fw fa-angle-down hidden-lg hidden-md hidden-sm"></span>
+          </a>
+          <!-- END Icon Notification with Badge (10)-->
+
+          <!-- START Notification Dropdown Menu -->
+          <ul class="dropdown-menu dropdown-menu-right p-t-0 b-t-0 p-b-0 b-b-0 b-a-0">
+            <li>
+              <div class="yamm-content p-t-0 p-r-0 p-l-0 p-b-0">
+                <ul class="list-group m-b-0 b-b-0">
+                  <li class="list-group-item b-r-0 b-l-0 b-r-0 b-t-r-0 b-t-l-0 b-b-2 w-350">
+                    <small class="text-uppercase">
+                      <strong>Notifications</strong>
+                    </small>
+                    <!--<a role="button" href="#" class="btn m-t-0 btn-xs btn-default pull-right">
+                      <i class="fa fa-fw fa-gear"></i>
+                    </a>-->
+                  </li>
+
+                  <!-- START Scroll Inside Panel -->
+                  <li class="list-group-item b-a-0 p-x-0 p-y-0 b-t-0">
+                    <div class="scroll-300 custom-scrollbar">
+                      <!--<a href="../pages/timeline.html" class="list-group-item b-r-0 b-t-0 b-l-0">
+                        <div class="media">
+                          <div class="media-left">
+                            <span class="fa-stack fa-lg">
+                              <i class="fa fa-circle-thin fa-stack-2x text-danger"></i>
+                              <i class="fa fa-close fa-stack-1x fa-fw text-danger"></i>
+                            </span>
+                          </div>
+                          <div class="media-body">
+                            <h5 class="m-t-0">
+                              <span>We need to compress the open-source SAS protocol!</span>
+                            </h5>
+                            <p class="text-nowrap small m-b-0">
+                              <span>24-Jan-2020, 09:41</span>
+                            </p>
+                          </div>
+                        </div>
+                      </a>-->
+                    </div>
+                  </li>
+
+                  <!-- END Scroll Inside Panel -->
+                  <li class="list-group-item b-a-0 p-x-0 p-y-0 r-a-0 b-b-0">
+                    <a class="list-group-item text-center b-r-0 b-b-0 b-l-0 b-r-b-r-0 b-r-b-l-0" href="/notifications">
+                      See All Notifications <i class="fa fa-angle-right"></i>
+                    </a>
+                  </li>
+                </ul>
+              </div>
+
+            </li>
+          </ul>
+          <!-- END Notification Dropdown Menu -->
+
+        </li>
+        <!-- END Notification -->
+
+        <li class="dropdown">
+          <a class="dropdown-toggle user-dropdown" data-toggle="dropdown" href="#" role="button">
+            <span class="m-r-1"><%= user.username %>#<%= user.discriminator%></span>
+            <div class="avatar avatar-image avatar-sm avatar-inline">
+              <img alt="User" src="https://cdn.discordapp.com/avatars/<%= user.discord.id %>/<%= user.discord.avatar %>.png">
+            </div>
+          </a>
+          <ul class="dropdown-menu">
+            <li class="dropdown-header text-gray-lighter">
+              <strong class="text-uppercase">Account</strong>
+            </li>
+            <li role="separator" class="divider"></li>
+            <li>
+              <a href="/profile-details">Your Profile</a>
+            </li>
+            <li>
+              <a href="#">Settings <span class="label label-danger label-outline">Coming Soon</span></a>
+            </li>
+            <li>
+              <a href="https://wiki.beamng-mp.com/">Wiki <span class="label label-primary label-outline">In-Progress</span></a>
+            </li>
+            <li role="separator" class="divider"></li>
+            <li>
+              <a href="/logout">Sign Out</a>
+            </li>
+          </ul>
+        </li>
+      </ul>
+      <!-- END Right Side Navbar -->
+    </div>
+  </div>
+</div>

@@ -1,0 +1,224 @@
+<head>
+    <meta charset="utf-8"/>
+    <meta http-equiv="X-UA-Compatible" content="IE=edge"/>
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <title>BeamMP</title>
+    <link rel="stylesheet" type="text/css" href="css/styles.css"/>
+<!--    <link rel="stylesheet" type="text/css" href="../static/css/styles.css"/>-->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css"/>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-alpha.6/css/bootstrap.min.css" integrity="sha384-rwoIResjU2yc3z8GV/NPeZWAv56rSmLldC3R/AZzGRnGxQQKnKkoFVhFQhNUwEyJ" crossorigin="anonymous">
+    <script src="https://code.jquery.com/jquery-3.1.1.slim.min.js" integrity="sha384-A7FZj7v+d/sdmMqp/nOQwliLvUsJfDHW+k9Omg/a/EheAdgtzNs3hpfag6Ed950n" crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/tether/1.4.0/js/tether.min.js" integrity="sha384-DztdAPBWPRXSA/3eYEEUWrWCy7G5KFbe8fFjk5JAIxUYHKkDx6Qin1DkWx51bBrb" crossorigin="anonymous"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-alpha.6/js/bootstrap.min.js" integrity="sha384-vBWWzlZJ8ea9aCX4pEW3rVHjgjt7zpkNpZk+02D9phzyeVkE+jo0ieGizqPLForn" crossorigin="anonymous"></script>
+    <script src="https://kit.fontawesome.com/90f05b466c.js" crossorigin="anonymous"></script>
+	<!-- Global site tag (gtag.js) - Google Analytics -->
+	<script async src="https://www.googletagmanager.com/gtag/js?id=UA-160071688-1"></script>
+	<script>
+	  window.dataLayer = window.dataLayer || [];
+	  function gtag(){dataLayer.push(arguments);}
+	  gtag('js', new Date());
+
+	  gtag('config', 'UA-160071688-1');
+	</script>
+</head>
+<body>
+    <nav class="nav">
+        <%- include('includes/nav.ejs') %>
+
+    </nav>
+
+    <header class="main-content" style="background-position: center center, center 0px;">
+        <div class="introduction" style="margin-top: 0px;">
+            <div class="container">
+                <div class="row center-xs middle-xs">
+                    <div class="col-lg-8 col-md-8 col-sm-8 col-xs-12">
+                        <p class="lead">
+                            <b>BeamMP</b> Bringing Multiplayer to BeamNG.drive!<br>
+                            With a smooth and enjoyable experience.
+                        </div>
+                        <div id="button" class="col-lg-4 col-md-4 col-sm-4 buttons-wrapper hidden-xs">
+                            <div class="buttons">
+                                <button class="download-client js-show-story" onclick="downloadinstaller()" href="beamMP.zip" download>
+                                    <span class="text">Download Client</span>
+                                    <span class="description"> BeamMP_Installer.zip</span>
+                                </button>
+                            </div>
+							<div class="buttons mt-3">
+                                <button class="download-client js-show-story" onclick="downloadserver()" href="beamMP.zip" download style="background: radial-gradient(circle,rgb(255 179 38 / 80%),rgb(255 176 0 / 65%)) center/100%;">
+                                    <span class="text">Download Server</span>
+                                    <span class="description"> BeamMP_Server.zip</span>
+                                </button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </header>
+    <section id="features">
+        <div class="container">
+            <div class="row center-lg center-md center-sm center-xs features">
+                <article class="col-lg-3">
+                    <h2>Stable Servers</h2>
+                    BeamMP allows for stable servers,
+                    with a variety of servers located accross the globe.
+                </article>
+                <article class="col-lg-3 col-md-6 col-sm-6 col-xs-12">
+                    <h2> BeamNG.drive </h2> BeamMP uses the same maps, vehicles & mods
+                    so you don't need to learn anything new!
+                </article>
+                <article class="col-lg-3 col-md-6 col-sm-6 col-xs-12">
+                    <h2> Standalone </h2> BeamMP doesn't modify your original installation,
+                    so you can play either singleplayer or multiplayer.
+                </article>
+                <article class="col-lg-3 col-md-6 col-sm-6 col-xs-12">
+                    <h2> Sync quality </h2> BeamMP updates your vehicle position ~100 per second,
+                    allowing for a smooth overall experience.
+                </article>
+            </div>
+        </div>
+
+        <hr>
+        <div class="row middle-lg">
+            <div class="col-lg-6">
+                <figure>
+<!--                    <img src="../img/beammpservers.png">-->
+                    <img src="../img/beammpservers.png">
+                </figure>
+            </div>
+            <div class="col-lg-6" style="text-align:center">
+                <ul class="user-features-list">
+                    <li> Dedicated servers </li>
+                    <li> The original BeamNG.Drive</li>
+                    <li> Dedicated support team</li>
+                    <li> 24/7 Global Access</li>
+                </ul>
+            </div>
+        </div>
+
+    </section>
+    <hr>
+    <section id="faq">
+        <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
+            <div class="container">
+                <!-- <div class="row"> -->
+                <h1>FAQ.</h1>
+                <div class="faq">
+                    <h3 id="faq-heading">The server list is not showing up!</h3>
+                    <p>Try restarting BeamMP as this can sometimes happen, if this fails to fix your issue please create a ticket in the discord</p>
+                    <h3 id="faq-heading">How do I open a ticket in case something doesn’t work or I have questions?</h3>
+                    <p>Please check the <b>#how-to-use</b> channel in Discord. Please give an accurate description of what you’ve done so the support team will help you in a fast and effective way. </p>
+                    <h3 id="faq-heading">Help! Im getting error codes</h3>
+                    <p>Please open a ticket in our Discord.</p>
+                    <h3 id="faq-heading"> Does this work with pirated versions of BeamNG.drive?</h3>
+                    <p>We don’t know if it works with pirated versions of BeamNG.drive, but we <b>will not</b> provide any support to non legit copies of the game.</p>
+                    <h3 id="faq-heading">How do I host a server?</h3>
+                    <p>In order access the files needed to host a server you have to become a Patreon supporter or a “Server Booster”. You can find the Patreon <a href="https://www.patreon.com/BeamNGMP">here</a>. You can become a Server Booster
+                        by clicking the server Discord name and then Server Boost in Discord. Both these categories will have early access to newer versions of the mod too.
+                    Don't worry the server files will eventually be open for the public once we are happy enough to release them. </p>
+                    <h3 id="faq-heading">Can I use mods?</h3>
+                    <p>Mods are supported in the new version v2.0. These are installed on the server. See our <a href="https://wiki.beamng-mp.com/en/home/Server_Mod">wiki</a> for more infomation.</p>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+<footer class="py-5">
+    <div class="container">
+        <div class="row">
+            <div class="col-6 col-sm-4 text-xs-center order-sm-2">
+                <a class="text-white" target="_blank" href="https://www.reddit.com/r/BeamMP/">
+                    <i class="fab fa-reddit"></i>
+                </a>
+
+                <a class="text-white" target="_blank" href="https://twitter.com/BeamNG_MP">
+                    <i class="fab fa-twitter"></i>
+                </a>
+
+                <a class="text-white" target="_blank" href="https://www.facebook.com/BeamNGMP">
+                    <i class="fab fa-facebook"></i>
+                </a>
+            </div>
+
+            <div class="col-6 justify-content-between col-sm-4 text-right text-xs-center order-sm-3">
+
+                <a class="text-white" target="_blank" href="https://github.com/Starystars67/BeamNG-MP-docs">
+                    <i class="fab fa-github"></i>
+                </a>
+
+                <a class="text-white" target="_blank" href="https://discord.gg/beammp">
+                    <i class="fab fa-discord"></i>
+                </a>
+
+                <a class="text-white" target="_blank" href="https://www.beamng.com/threads/beamng-drive-multiplayer-beamng-mp-formally-local-multiplayer-lua-based.63052/">
+                    <i class="fa fa-envelope"></i>
+                </a>
+
+            </div>
+        </div>
+        <div class="col-12 col-sm-4 text-center py-4 order-sm-2">
+            <small class="text-white">© 2020 BeamMP Mod Team All Rights Reserved</small>
+        </br>
+            <small class="ml-1"><a href="https://forum.beamng-mp.com/topic/95/privacy-policy-v1-0?_=1605727272235" target="_blank">Privacy Policy</a></small>
+        </div>
+    </div>
+</footer>
+<!-- <footer class="">
+<div class="col-1 justify-content-between socials-left">
+<ul class="list-inline">
+
+<li class="col-xs-4 list-inline-item h3" data-toggle="tooltip" data-placement="top" title="" aria-label="Reddit" data-original-title="Reddit">
+<a class="text-white" target="_blank" href="https://www.reddit.com/user/BeamNG-MP_Mod_Team">
+<i class="fab fa-reddit"></i>
+</a>
+</li>
+
+<li class="col-xs-4 list-inline-item h3" data-toggle="tooltip" data-placement="top" title="" aria-label="Twitter" data-original-title="Twitter">
+<a class="text-white" target="_blank" href="https://twitter.com/BeamNG_MP">
+<i class="fab fa-twitter"></i>
+</a>
+</li>
+
+<li class="col-xs-4 list-inline-item h3" data-toggle="tooltip" data-placement="top" title="" aria-label="Facebook" data-original-title="Facebook">
+<a class="text-white" target="_blank" href="https://www.facebook.com/BeamNGMP">
+<i class="fab fa-facebook"></i>
+</a>
+</li>
+</ul>
+</div>
+<div class="row middle-xs">
+<hr>
+<div class="col-lg-8 col-md-7 col-sm-6">
+<p>BeamNG-MP is not affiliated by BeamNG.Drive, Any trademarks belong to the respective owners.
+</p>
+</div>
+<div class="copyright col-lg-4 col-md-5 col-sm-6">
+<p class="righty"> © 2020 BeamNG-MP Mod Team All Rights Reserved.
+</p>
+</div>
+</div>
+</footer> -->
+<script>
+function downloadinstaller() {
+    document.location.href ="/installer/BeamMP_Installer.zip";
+	//alert("Sorry this is coming soon, Therefore it is not available just yet. Please join the discord to get the latest version: https://discord.gg/beammp")
+}
+
+function downloadserver() {
+    document.location.href ="/server/BeamMP_Server.zip";
+	//alert("Sorry this is coming soon, Therefore it is not available just yet. Please join the discord to get the latest version: https://discord.gg/beammp")
+}
+
+function myFunction() {
+    var x = document.getElementById("burger-links");
+    if (x.style.display === "block") {
+        x.style.display = "none";
+    } else {
+        x.style.display = "block";
+    }
+}
+</script>
+<script src="js/script.js"></script>
+<!--    <script src="../static/js/script.js"></script>-->
+</body>
