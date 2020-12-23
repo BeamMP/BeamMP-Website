@@ -3,7 +3,7 @@ var router = express.Router();
 
 module.exports = function(){
   router.get('/forum', function(req, res) {
-    res.redirect('https://forum.beamng-mp.com/');
+    res.redirect('https://forum.beammp.com/');
   });
 
   router.get('/servers', function(req, res) {
@@ -15,7 +15,7 @@ module.exports = function(){
   });
 
   router.get('/keymaster', function(req, res) {
-    res.redirect('https://forum.beamng-mp.com/');
+    res.redirect('https://forum.beammp.com/');
   });
 
   return router;
