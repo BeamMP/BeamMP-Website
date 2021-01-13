@@ -7,7 +7,13 @@
   <meta name="description" content="" />
   <meta name="author" content="" />
   <title>BeamNG-MP-Statistics</title>
+  <link rel="stylesheet" type="text/css" href="css/styles.css"/>
   <link href="css/servers-styles.css" rel="stylesheet" />
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css"/>
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-alpha.6/css/bootstrap.min.css" integrity="sha384-rwoIResjU2yc3z8GV/NPeZWAv56rSmLldC3R/AZzGRnGxQQKnKkoFVhFQhNUwEyJ" crossorigin="anonymous">
+  <script src="https://code.jquery.com/jquery-3.1.1.slim.min.js" integrity="sha384-A7FZj7v+d/sdmMqp/nOQwliLvUsJfDHW+k9Omg/a/EheAdgtzNs3hpfag6Ed950n" crossorigin="anonymous"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/tether/1.4.0/js/tether.min.js" integrity="sha384-DztdAPBWPRXSA/3eYEEUWrWCy7G5KFbe8fFjk5JAIxUYHKkDx6Qin1DkWx51bBrb" crossorigin="anonymous"></script>
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-alpha.6/js/bootstrap.min.js" integrity="sha384-vBWWzlZJ8ea9aCX4pEW3rVHjgjt7zpkNpZk+02D9phzyeVkE+jo0ieGizqPLForn" crossorigin="anonymous"></script>
   <link href="https://cdn.datatables.net/1.10.20/css/dataTables.bootstrap4.min.css" rel="stylesheet" crossorigin="anonymous" />
   <script src="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.11.2/js/all.min.js" crossorigin="anonymous"></script>
   <!-- Global site tag (gtag.js) - Google Analytics -->
@@ -21,27 +27,51 @@
     gtag('config', 'UA-160071688-1');
   </script>
 </head>
-<body class="sb-nav-fixed">
-  <nav class="sb-topnav navbar navbar-expand navbar-dark bg-dark">
-    <%- include('includes/nav.ejs') %>
+<body>
+  <nav class="nav" style="position: unset !important;">
+      <%- include('includes/nav.ejs') %>
   </nav>
-  <div id="layoutSidenav_content">
-    <main>
-      <br>
-      <br>
-      <div class="container-fluid">
-        <h1 class="mt-4"><i class="fas fa-server mr-1"></i>BeamMP Statistics <span id="LivePlayerCount"></span></h1>
-        <div style="height: 800px;">
-          <canvas id="myChart" width="400" height="770"></canvas>
+  <div class="container-fluid">
+      <div id="layoutSidenav_content">
+        <div class="row">
+          <div class="col-md-12">
+            <h1 class="mt-4" style="color:white;"><i class="fas fa-server mr-1"></i>BeamMP Statistics <h3 id="LivePlayerCount" style="color:white;"></h3></h1>
+          </div>
+          <div class="col-md-4">
+            <div class="card">
+              <div class="card-body">
+                <h5 class="card-title">Highest Recorded Players</h5>
+                <p class="card-text text-muted" id="MAXPLAYERS">100</p>
+              </div>
+            </div>
+          </div>
+          <div class="col-md-4">
+            <div class="card">
+              <div class="card-body">
+                <h5 class="card-title">Highest Recorded Servers</h5>
+                <p class="card-text text-muted" id="MAXSERVERS">100</p>
+              </div>
+            </div>
+          </div>
+          <div class="col-md-4">
+            <div class="card">
+              <div class="card-body">
+                <h5 class="card-title">Something</h5>
+                <p class="card-text">-</p
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="col-md-12">
+          <canvas id="myChart" width="100vw" height="770"></canvas>
         </div>
       </div>
-    </main>
     <footer class="py-4 bg-light mt-auto">
       <div class="container-fluid">
         <div class="d-flex align-items-center justify-content-between small">
-          <div class="text-muted">Copyright &copy; BeamNG-MP Development Team 2020</div>
+          <div class="text-muted">Copyright &copy; BeamMP Development Team 2020</div>
           <div>
-            <a href="#">Privacy Policy</a>
+            <a href="https://forum.beammp.com/topic/95/privacy-policy-v1-0">Privacy Policy</a>
             &middot;
             <a href="#">Terms &amp; Conditions</a>
           </div>
@@ -66,16 +96,21 @@
         },
         dataType: 'json',
         success: function (d) {
+          console.log(d)
           var Data = {}
           Data.Players = []
           Data.Servers = []
           Data.Labels = []
+		  console.log(d.maxp, d.maxs)
           console.log(d.history)
           d.history.forEach(function(item, index) {
             Data.Players.push(item.players)
             Data.Servers.push(item.servers)
             Data.Labels.push(item.datetime)
           });
+		  $('#MAXPLAYERS').text(d.maxp);
+		  $('#MAXSERVERS').text(d.maxs);
+          $('#LivePlayerCount').text(`Currently Online: ${d.history[d.history.length-1].players}`)
           console.log(Data)
           var ctx = document.getElementById('myChart').getContext('2d');
           ctx.height = 770;
@@ -102,7 +137,7 @@
               maintainAspectRatio: false,
       				title: {
       					display: true,
-      					text: 'BeamNG-MP Statistics'
+      					text: 'BeamMP Statistics'
       				},
       				tooltips: {
       					mode: 'index',
