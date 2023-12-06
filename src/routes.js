@@ -17,6 +17,20 @@ function mainRoutes(router) {
   router.get('/ping', function (req, res) {
     res.send('OK');
   });
+
+  /**
+   * Redirects
+   */
+
+  router.get('/keymaster', function (req, res) {
+    res.redirect('https://keymaster.beammp.com/');
+  });
+  router.get('/k/keys', function (req, res) {
+    res.redirect('https://keymaster.beammp.com/');
+  });
+  router.get('/k/dashboard', function (req, res) {
+    res.redirect('https://keymaster.beammp.com/');
+  });
 }
 
 module.exports = function (app) {

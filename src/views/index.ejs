@@ -2,6 +2,7 @@
     <meta charset="utf-8"/>
     <meta http-equiv="X-UA-Compatible" content="IE=edge"/>
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <meta name="abuseipdb-verification" content="K1hJK7Gv" />
     <title>BeamMP</title>
     <link rel="stylesheet" type="text/css" href="css/styles.css"/>
 <!--    <link rel="stylesheet" type="text/css" href="../static/css/styles.css"/>-->
@@ -20,6 +21,35 @@
 
 	  gtag('config', 'UA-160071688-1');
 	</script>
+    <script>
+        document.addEventListener("DOMContentLoaded", function() {
+          // Make a Fetch request to fetch the data
+          fetch("https://backend.beammp.com/metrics")
+            .then(response => {
+              if (!response.ok) {
+                throw new Error("Network response was not ok");
+              }
+              return response.text();
+            })
+            .then(data => {
+              // Split the string by space
+              var values = data.split(" ");
+        
+              // Check if the second value exists
+              if (values.length >= 2) {
+                // Set the second value into the element with ID "ONLINE-PLAYERS"
+                document.getElementById("ONLINE-PLAYERS").textContent = values[1];
+              } else {
+                // Handle the case where the string does not contain enough values
+                document.getElementById("ONLINE-PLAYERS").textContent = "Error: Insufficient data";
+              }
+            })
+            .catch(error => {
+              // Handle errors during the Fetch request
+              document.getElementById("ONLINE-PLAYERS").textContent = "Error: " + error.message;
+            });
+        });
+    </script>
 </head>
 <body>
     <nav class="nav">
@@ -36,7 +66,10 @@
                             With a smooth and enjoyable experience.
                         </div>
                         <div id="button" class="col-lg-4 col-md-4 col-sm-4 buttons-wrapper hidden-xs">
-                            <div class="buttons">
+                            <div>
+                                <h2>Players Online: <span id="ONLINE-PLAYERS"></span></h2>
+                            </div>
+                            <div class="buttons mt-3">
                                 <button class="download-client js-show-story" onclick="downloadinstaller()" href="beamMP.zip" download>
                                     <img class="os-icon" src="https://raw.githubusercontent.com/devicons/devicon/master/icons/windows8/windows8-original.svg" alt="windows-logo">
 									<span class="text">Download Client</span>
@@ -94,7 +127,6 @@
         <div class="row middle-lg">
             <div class="col-lg-6">
                 <figure>
-<!--                    <img src="../img/beammpservers.png">-->
                     <img src="../img/beammpservers.png">
                 </figure>
             </div>
@@ -124,7 +156,7 @@
                 <h3 id="faq-heading"> Does this work with pirated versions of BeamNG.drive?</h3>
                 <p>We don’t know if it works with pirated versions of BeamNG.drive, but we <b>will not</b> provide any support to non legit copies of the game. Nor will we change to support it.</p>
                 <h3 id="faq-heading">How do I host a server?</h3>
-                <p>The server files required for hosting your own server can be found at the top of this page below the client download. You will also require a authentication key which can be found from <a href="https://beammp.com/k/keys">keymaster</a>. Further information around the setup can be found on our <a href="https://wiki.beammp.com/en/home/Server_Mod">wiki</a>.</p>
+                <p>The server files required for hosting your own server can be found at the top of this page below the client download. You will also require a authentication key which can be found from <a href="https://keymaster.beammp.com/">keymaster</a>. Further information around the setup can be found on our <a href="https://wiki.beammp.com/en/home/Server_Mod">wiki</a>.</p>
                 <h3 id="faq-heading">Can I use mods?</h3>
                 <p>Mods are supported, These are installed on the server. See our <a href="https://wiki.beammp.com/en/home/Server_Mod">wiki</a> for more infomation.</p>
                 </div>
@@ -134,41 +166,6 @@
 </section>
 
 <%- include('includes/footer.ejs') %>
-<!-- <footer class="">
-<div class="col-1 justify-content-between socials-left">
-<ul class="list-inline">
-
-<li class="col-xs-4 list-inline-item h3" data-toggle="tooltip" data-placement="top" title="" aria-label="Reddit" data-original-title="Reddit">
-<a class="text-white" target="_blank" href="https://www.reddit.com/user/BeamNG-MP_Mod_Team">
-<i class="fab fa-reddit"></i>
-</a>
-</li>
-
-<li class="col-xs-4 list-inline-item h3" data-toggle="tooltip" data-placement="top" title="" aria-label="Twitter" data-original-title="Twitter">
-<a class="text-white" target="_blank" href="https://twitter.com/BeamMP_Mod_Team">
-<i class="fab fa-twitter"></i>
-</a>
-</li>
-
-<li class="col-xs-4 list-inline-item h3" data-toggle="tooltip" data-placement="top" title="" aria-label="Facebook" data-original-title="Facebook">
-<a class="text-white" target="_blank" href="https://www.facebook.com/BeamNGMP">
-<i class="fab fa-facebook"></i>
-</a>
-</li>
-</ul>
-</div>
-<div class="row middle-xs">
-<hr>
-<div class="col-lg-8 col-md-7 col-sm-6">
-<p>BeamMP is not affiliated by BeamNG.Drive, Any trademarks belong to their respective owners.
-</p>
-</div>
-<div class="copyright col-lg-4 col-md-5 col-sm-6">
-<p class="righty"> © 2021 BeamMP Mod Team All Rights Reserved.
-</p>
-</div>
-</div>
-</footer> -->
 <script>
 function downloadinstaller() {
     document.location.href ="/installer/BeamMP_Installer.zip";

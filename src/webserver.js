@@ -49,9 +49,9 @@ if (!cluster.isMaster) {
     if (process.env.DEBUG == "true") {
       console.log('Request Logging Enabled.')
       app.use(morgan('dev', {
-        /*skip: function (req, res) { 
+        skip: function (req, res) { 
           return res.statusCode == 200 || res.statusCode == 401
-        }*/
+        }
       }))
     }
   
@@ -95,9 +95,8 @@ if (!cluster.isMaster) {
 })(WebServer)
 
 function allowCrossDomain (req, res, next) {
-  const allowedOrigins = ['http://127.0.0.1:3599', 'http://localhost:3599', 'https://beammp.com', 'https://backend.beammp.com'];
+  const allowedOrigins = ['http://127.0.0.1:3599', 'http://localhost:3599', 'https://beammp.com', 'https://backend.beammp.com', 'https://forum.beammp.com', 'https://docs.beammp.com'];
   const origin = req.headers['origin'];
-  console.log(origin)
   if (allowedOrigins.includes(origin)) {
        res.setHeader('Access-Control-Allow-Origin', origin);
   }
