@@ -38,16 +38,29 @@
                         <div id="button" class="col-lg-4 col-md-4 col-sm-4 buttons-wrapper hidden-xs">
                             <div class="buttons">
                                 <button class="download-client js-show-story" onclick="downloadinstaller()" href="beamMP.zip" download>
-                                    <span class="text">Download Client</span>
+                                    <img class="os-icon" src="https://raw.githubusercontent.com/devicons/devicon/master/icons/windows8/windows8-original.svg" alt="windows-logo">
+									<span class="text">Download Client</span>
                                     <span class="description"> BeamMP_Installer.zip</span>
                                 </button>
                             </div>
 							<div class="buttons mt-3">
-                                <button class="download-client js-show-story" onclick="downloadserver()" href="beamMP.zip" download style="background: radial-gradient(circle,rgb(255 179 38 / 80%),rgb(255 176 0 / 65%)) center/100%;">
-                                    <span class="text">Download Server</span>
-                                    <span class="description"> BeamMP-Server</span>
-                                </button>
-                            </div>
+								<form action="https://github.com/BeamMP/BeamMP-Server/releases/latest/download/BeamMP-Server.exe">
+									<button class="download-client js-show-story" style="background: radial-gradient(circle,rgb(255 179 38 / 80%),rgb(255 176 0 / 65%)) center/100%;">
+										<img class="os-icon" src="https://raw.githubusercontent.com/devicons/devicon/master/icons/windows8/windows8-original.svg" alt="windows-logo">
+										<span class="text">Download Server</span>
+										<span class="description"> BeamMP-Server.exe</span>
+									</button>
+								</form>
+							</div>
+							<div class="buttons mt-3">
+								<form action="https://github.com/BeamMP/BeamMP-Server/releases/latest">
+									<button class="download-client js-show-story" style="background: radial-gradient(circle,rgb(255 179 38 / 80%),rgb(255 176 0 / 65%)) center/100%;">
+										<img class="os-icon" src="https://raw.githubusercontent.com/devicons/devicon/master/icons/linux/linux-plain.svg" alt="linux-logo">
+										<span class="text">Download Server</span>
+										<span class="description">Linux builds</span>
+									</button>
+								</form>
+							</div>
                         </div>
                     </div>
                 </div>

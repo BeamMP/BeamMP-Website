@@ -134,7 +134,7 @@ nav li {
 
 .logo-image {
     width: 200px;
-    /*height: 200px;*/
+    height: 200px;
     /*border-radius: 50%;*/
     /*margin-top: -57px;*/
 }
@@ -328,7 +328,7 @@ p {
     -moz-user-select: none;
     -ms-user-select: none;
     user-select: none;
-	min-width: 260px;
+	min-width: 297px;
 }
 
 .description {
@@ -336,6 +336,20 @@ p {
     font-size: 12px;
     font-weight: 200;
     opacity: .9;
+}
+
+div.buttons {
+	min-width: 297px;
+}
+
+div.buttons.mt-3 {
+	min-width: 297px;
+}
+
+img.os-icon {
+	width: 32px !important;
+	height: 32px !important;
+	margin-left: 0 !important;
 }
 
 @media screen and (max-width: 600px) {
