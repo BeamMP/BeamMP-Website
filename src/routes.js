@@ -19,6 +19,24 @@ function mainRoutes(router) {
   });
 
   /**
+   * Backwards Compat for OLD launcher versions
+   */
+  router.get('/builds/launcher', function(req, res) {
+    if (req.query.download == 'true') {
+      //res.download('https://backend.beammp.com/builds/launcher?download=true')
+      const file = `${__dirname}/static/builds/launcher/launcher.exe`;
+		  res.download(file); // Set disposition and send it.
+    } else if (req.query.version == 'true') {
+      //res.redirect('https://backend.beammp.com/builds/launcher?version=true')
+      const file = `${__dirname}/static/builds/launcher/version.json`;
+		  res.download(file); // Set disposition and send it.
+    } else {
+      //res.sendStatus(403)
+      res.send("Not Found!")
+    }
+  });
+
+  /**
    * Redirects
    */
 
