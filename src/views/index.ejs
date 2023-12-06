@@ -24,7 +24,6 @@
 <body>
     <nav class="nav">
         <%- include('includes/nav.ejs') %>
-
     </nav>
 
     <header class="main-content" style="background-position: center center, center 0px;">
@@ -46,7 +45,7 @@
 							<div class="buttons mt-3">
                                 <button class="download-client js-show-story" onclick="downloadserver()" href="beamMP.zip" download style="background: radial-gradient(circle,rgb(255 179 38 / 80%),rgb(255 176 0 / 65%)) center/100%;">
                                     <span class="text">Download Server</span>
-                                    <span class="description"> BeamMP_Server.zip</span>
+                                    <span class="description"> BeamMP-Server</span>
                                 </button>
                             </div>
                         </div>
@@ -112,74 +111,22 @@
                 <h3 id="faq-heading"> Does this work with pirated versions of BeamNG.drive?</h3>
                 <p>We don’t know if it works with pirated versions of BeamNG.drive, but we <b>will not</b> provide any support to non legit copies of the game. Nor will we change to support it.</p>
                 <h3 id="faq-heading">How do I host a server?</h3>
-                <p>The server files required for hosting your own server can be found at the top of this page below the client download. You will also require a authentication key which can be found from <a href="https://beammp.com/k/keys">keymaster</a>. Further information around the setup can be found on our <a href="https://wiki.beammp.com/en/home/server-installation">wiki</a>.</p>
+                <p>The server files required for hosting your own server can be found at the top of this page below the client download. You will also require a authentication key which can be found from <a href="https://beammp.com/k/keys">keymaster</a>. Further information around the setup can be found on our <a href="https://wiki.beammp.com/en/home/Server_Mod">wiki</a>.</p>
                 <h3 id="faq-heading">Can I use mods?</h3>
-                <p>Mods are supported, These are installed on the server. See our <a href="https://wiki.beammp.com/en/home/server-installation">wiki</a> for more infomation.</p>
+                <p>Mods are supported, These are installed on the server. See our <a href="https://wiki.beammp.com/en/home/Server_Mod">wiki</a> for more infomation.</p>
                 </div>
-				<!--Start of Tawk.to Script
-<script type="text/javascript">
-var Tawk_API=Tawk_API||{}, Tawk_LoadStart=new Date();
-(function(){
-var s1=document.createElement("script"),s0=document.getElementsByTagName("script")[0];
-s1.async=true;
-s1.src='https://embed.tawk.to/5f875a212901b92076937d66/default';
-s1.charset='UTF-8';
-s1.setAttribute('crossorigin','*');
-s0.parentNode.insertBefore(s1,s0);
-})();
-</script>
-End of Tawk.to Script-->
             </div>
         </div>
     </div>
 </section>
 
-<footer class="py-5">
-    <div class="container">
-        <div class="row">
-            <div class="col-6 col-sm-4 text-xs-center order-sm-2">
-                <a class="text-white" target="_blank" href="https://www.reddit.com/r/BeamMP">
-                    <i class="fab fa-reddit"></i>
-                </a>
-
-                <a class="text-white" target="_blank" href="https://twitter.com/BeamMP_Mod_Team">
-                    <i class="fab fa-twitter"></i>
-                </a>
-
-                <a class="text-white" target="_blank" href="https://www.facebook.com/BeamMPTeam">
-                    <i class="fab fa-facebook"></i>
-                </a>
-            </div>
-
-            <div class="col-6 justify-content-between col-sm-4 text-right text-xs-center order-sm-3">
-
-                <a class="text-white" target="_blank" href="https://github.com/BeamMP/BeamMP">
-                    <i class="fab fa-github"></i>
-                </a>
-
-                <a class="text-white" target="_blank" href="https://discord.gg/beammp">
-                    <i class="fab fa-discord"></i>
-                </a>
-
-                <a class="text-white" target="_blank" href="https://www.beamng.com/threads/beamng-drive-multiplayer-beamng-mp-formally-local-multiplayer-lua-based.63052/">
-                    <i class="fa fa-envelope"></i>
-                </a>
-
-            </div>
-        </div>
-        <div class="col-12 col-sm-4 text-center py-4 order-sm-2">
-            <small class="text-white">© 2020 BeamMP Mod Team All Rights Reserved</small>
-            <small class="ml-1"><a href="https://forum.beammp.com/t/privacy-policy/6" target="_blank">Privacy Policy</a></small>
-
-        </div>
-    </div>
-</footer>
+<%- include('includes/footer.ejs') %>
 <!-- <footer class="">
 <div class="col-1 justify-content-between socials-left">
 <ul class="list-inline">
 
 <li class="col-xs-4 list-inline-item h3" data-toggle="tooltip" data-placement="top" title="" aria-label="Reddit" data-original-title="Reddit">
-<a class="text-white" target="_blank" href="https://www.reddit.com/r/BeamMP">
+<a class="text-white" target="_blank" href="https://www.reddit.com/user/BeamNG-MP_Mod_Team">
 <i class="fab fa-reddit"></i>
 </a>
 </li>
@@ -191,7 +138,7 @@ End of Tawk.to Script-->
 </li>
 
 <li class="col-xs-4 list-inline-item h3" data-toggle="tooltip" data-placement="top" title="" aria-label="Facebook" data-original-title="Facebook">
-<a class="text-white" target="_blank" href="https://www.facebook.com/BeamMPTeam">
+<a class="text-white" target="_blank" href="https://www.facebook.com/BeamNGMP">
 <i class="fab fa-facebook"></i>
 </a>
 </li>
@@ -200,11 +147,11 @@ End of Tawk.to Script-->
 <div class="row middle-xs">
 <hr>
 <div class="col-lg-8 col-md-7 col-sm-6">
-<p>BeamNG-MP is not affiliated by BeamNG.Drive, Any trademarks belong to the respective owners.
+<p>BeamMP is not affiliated by BeamNG.Drive, Any trademarks belong to their respective owners.
 </p>
 </div>
 <div class="copyright col-lg-4 col-md-5 col-sm-6">
-<p class="righty"> © 2020 BeamMP Mod Team All Rights Reserved.
+<p class="righty"> © 2021 BeamMP Mod Team All Rights Reserved.
 </p>
 </div>
 </div>
@@ -216,7 +163,7 @@ function downloadinstaller() {
 }
 
 function downloadserver() {
-    document.location.href ="/server/BeamMP_Server.zip";
+    document.location.href ="https://github.com/BeamMP/BeamMP-Server/releases/latest";
 	//alert("Sorry this is coming soon, Therefore it is not available just yet. Please join the discord to get the latest version: https://discord.gg/beammp")
 }
 

@@ -1,25 +1,29 @@
 {
   "name": "beammp-website",
   "version": "1.0.0",
-  "description": "",
+  "description": "BeamMP Website",
   "main": "index.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "docker-build": "docker build -t 192.168.100.6:5000/beammp/website:latest -t 192.168.100.6:5000/beammp/website:1.0.0 .",
+    "docker-push": "docker push 192.168.100.6:5000/beammp/website:latest"
   },
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/Starystars67/BeamMP-Website.git"
+    "url": "git+https://github.com/BeamMP/BeamMP-Website.git"
   },
   "author": "",
   "license": "ISC",
   "bugs": {
-    "url": "https://github.com/Starystars67/BeamMP-Website/issues"
+    "url": "https://github.com/BeamMP/BeamMP-Website/issues"
   },
-  "homepage": "https://github.com/Starystars67/BeamMP-Website#readme",
+  "homepage": "https://github.com/BeamMP/BeamMP-Website#readme",
   "dependencies": {
     "body-parser": "^1.19.0",
     "chalk": "^3.0.0",
+    "dotenv": "^16.0.3",
     "ejs": "^3.0.1",
-    "express": "^4.17.1"
+    "express": "^4.17.1",
+    "helmet": "^6.1.5",
+    "morgan": "^1.10.0"
   }
 }
