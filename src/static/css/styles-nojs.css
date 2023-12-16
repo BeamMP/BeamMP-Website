@@ -1,0 +1,69 @@
+.pageContainer .footer-js {
+	display: none;
+}
+
+.nojs-warning {
+	position: absolute !important;
+	max-width: 400px !important;
+	text-align: center !important;
+	padding-top: 24px !important;
+	animation: blinker 2s ease-in-out infinite;
+}
+
+@keyframes blinker {  
+  50% { opacity: 0; }
+}
+
+.content-not-available {
+	display: grid;
+    position: relative;
+    -webkit-box-align: center;
+    -ms-flex-align: center;
+    align-items: center;
+    width: 100%;
+    height: calc(100vh - 80px);
+    overflow: hidden;
+    color: #fefee1;
+}
+
+.content-not-available .content-not-available-introduction {
+    width: 100%;
+    position: absolute;
+    transition: transform .2s ease;
+    transform: translateX(0);
+	text-align: center;
+}
+
+.dropdown-menu-linux {
+	position: relative;
+	display: inline-block;
+}
+
+.dropdownbtn {
+	border: none;
+	color: #fefee1;
+	background-color: transparent;
+	text-shadow: 0 0 1px rgba(22, 25, 35, 0.5);
+}
+
+.dropdown-menu-linux-content {
+	display: none;
+	position: absolute;
+	background-color: rgb(255 179 38 / 80%);
+	width: 100%;
+	box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
+	z-index: 1;
+}
+
+.dropdown-menu-linux-content a {
+	text-decoration: none;
+	display: block;
+}
+
+.dropdown-menu-linux-content a:hover {
+	background-color: #ddd;
+}
+
+.dropdown-menu-linux:hover .dropdown-menu-linux-content {
+	display: block;
+}
