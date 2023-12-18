@@ -1,4 +1,4 @@
-.pageContainer .footer-js {
+.pageContainer, .footer-js {
 	display: none;
 }
 
