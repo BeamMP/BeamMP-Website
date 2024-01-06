@@ -235,10 +235,6 @@ nav li {
 }
 
 @media screen and (max-width: 767px) {
-    .text {
-        display: none;
-    }
-
     .logo-link {
         display: flex;
         height: 100%;
@@ -262,9 +258,10 @@ nav li {
     align-items: center;
     width: 100%;
     height: calc(100vh - 80px);
-    overflow: hidden;
+    overflow: auto;
     background: linear-gradient(-45deg, rgba(22, 25, 35, 0.35) 0%, rgba(22, 25, 35, 0.95) 100%) center center/100%, url(../img/beamng-mp-landing.png) center top/cover;
     color: #fefee1;
+	min-height: 700px;
 }
 
 .main-content .introduction {
@@ -352,12 +349,37 @@ img.os-icon {
 	margin-left: 0 !important;
 }
 
+div.col-md-4.col-md-4 {
+    max-height: inherit;
+}
+
+div.col-md-8.col-md-8 {
+    max-height: inherit;
+}
+
+a.logo-img {
+    max-height: inherit;
+}
+
+div.logo-image {
+    max-height: inherit;
+}
+
+div.player-count {
+	width: max-content;
+}
+
+#button {
+	min-width: 297px;
+}
+
+/*
 @media screen and (max-width: 600px) {
     #button {
       display: none;
     }
   }
-
+*/
 /* --------- Features  ---------*/
 
 .features article.col-lg-3 {
