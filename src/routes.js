@@ -13,6 +13,10 @@ function mainRoutes(router) {
   router.get('/stats', function (req, res) {
     res.render('stats.ejs');
   });
+  
+  router.get('/linux-builds', function (req, res) {
+    res.render('linux-builds.ejs');
+  });
 
   router.get('/ping', function (req, res) {
     res.send('OK');
